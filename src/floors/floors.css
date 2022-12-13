@@ -1,0 +1,39 @@
+.floors {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.floor {
+    border-bottom: gray 1px solid;
+    height: 20vh;
+}
+.block__info {
+    padding-left: 190px;
+    width: 100px;
+}
+.block__info span {
+    font-size: 1.3rem;
+    padding-left: 9px;
+}
+.btn {
+    border: #1276a1 2px solid;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn__inner {
+    padding: 5px;
+    border-radius: 50%;
+    border: #1276a1 2px solid;
+}
+.block__info .active {
+    border: orangered 2px solid;
+}
+.block__info .btn .active {
+    border: orangered 2px solid;
+    background: orange;
+}
