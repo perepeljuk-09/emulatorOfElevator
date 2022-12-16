@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import img1 from "../img/arrow-up.png";
 import img2 from "../img/arrow-down.png";
 import {useDispatch, useSelector} from "react-redux";
-import {callElevator, choiceElevatorAC, setIsPending} from "../store/reducers/queueCommonReducer";
+import {callElevator, choiceElevatorAC, setIsPending} from "../store/reducers/CommonReducer";
 
 const Shaft = ({elevator}) => {
     const countFloors = useSelector(state => state.CommonReducer.countFloors.length)

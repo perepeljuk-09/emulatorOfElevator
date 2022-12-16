@@ -1,7 +1,7 @@
 import React from 'react';
 import "./floors.css"
 import {useDispatch, useSelector} from "react-redux";
-import {addToQueueCommon, choiceElevatorAC, setIsActiveBtn} from "../store/reducers/queueCommonReducer";
+import {addToQueueCommon, choiceElevatorAC, setIsActiveBtn} from "../store/reducers/CommonReducer";
 
 const Floors = () => {
 
