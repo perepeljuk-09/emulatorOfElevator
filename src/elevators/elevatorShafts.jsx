@@ -5,7 +5,7 @@ import Shaft from "./shaft";
 
 
 const ElevatorShafts = () => {
-    const countElevators = useSelector(state => state.QueueCommonReducer.countElevators)
+    const countElevators = useSelector(state => state.CommonReducer.countElevators)
 
     return (
         <div className="shafts">

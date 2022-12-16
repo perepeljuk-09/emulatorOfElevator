@@ -5,7 +5,7 @@ import {addToQueueCommon, choiceElevatorAC, setIsActiveBtn} from "../store/reduc
 
 const Floors = () => {
 
-    const countFloors = useSelector(state => state.QueueCommonReducer.countFloors)
+    const countFloors = useSelector(state => state.CommonReducer.countFloors)
     const dispatch = useDispatch()
     return (
         <div className="floors">

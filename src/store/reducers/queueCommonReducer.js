@@ -56,17 +56,6 @@ const choiceElevator = (nextFloor, state) => {
         } else {
             return currentElevator
         }
-        // if(!el.isPending) {
-        //     if(el.position !== nextFloor) {
-        //         const newDifference = ((el.position - nextFloor) < 0) ? ((el.position - nextFloor) * -1) : (el.position - nextFloor)
-        //         if (newDifference < difference){
-        //             difference = newDifference
-        //             currentElevator = el.id
-        //         }
-        //     } else {
-        //         return
-        //     }
-        // }
     })
     return currentElevator
 }
@@ -77,7 +66,7 @@ const createTransition = (nextPosition, currentPosition) => {
             return (currentPosition - nextPosition)
         }
     }
-const QueueCommonReducer = (state = initialState, action) => {
+const CommonReducer = (state = initialState, action) => {
     switch (action.type){
         case ADD_TO_QUEUE_COMMON:
             if (!state.countElevators.find(elev => elev.position === action.nextFloor)){
@@ -158,7 +147,6 @@ const QueueCommonReducer = (state = initialState, action) => {
         default:
         return state
     }
-
 };
 
 export const addToQueueCommon = (nextFloor) => ({type: ADD_TO_QUEUE_COMMON, nextFloor})
@@ -187,4 +175,4 @@ export const callElevator = (nextFloor, currentFloor, dispatch, numberOfElevator
     }, newTransition * 1000)
 }
 
-export default QueueCommonReducer;
+export default CommonReducer;

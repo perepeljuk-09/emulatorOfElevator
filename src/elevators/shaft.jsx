@@ -5,9 +5,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {callElevator, choiceElevatorAC, setIsPending} from "../store/reducers/queueCommonReducer";
 
 const Shaft = ({elevator}) => {
-    const countFloors = useSelector(state => state.QueueCommonReducer.countFloors.length)
-    const queueCommon = useSelector(state => state.QueueCommonReducer.queueCommon)
-    const currentElevator = useSelector(state => state.QueueCommonReducer.currentElevator)
+    const countFloors = useSelector(state => state.CommonReducer.countFloors.length)
+    const queueCommon = useSelector(state => state.CommonReducer.queueCommon)
+    const currentElevator = useSelector(state => state.CommonReducer.currentElevator)
     const dispatch = useDispatch()
 
     const frame = () => {
@@ -24,25 +24,25 @@ const Shaft = ({elevator}) => {
         return <img src={img2} alt="arrow-down.png"/>
     }
     useEffect(() => {
+        dispatch(choiceElevatorAC(queueCommon[0]))
         if (queueCommon.length !== 0 && elevator.queueElevator.length === 0 && !elevator.isPending && currentElevator === elevator.id) {
             callElevator(queueCommon[0], elevator.position, dispatch, elevator.id)
         }
     }, [queueCommon, elevator.queueElevator, elevator.isPending, currentElevator])
     useEffect(() => {
         if (elevator.isPending) {
-            const timer = setInterval(frame, 300)
+            const timer = setInterval(frame, 400)
             setTimeout(() => {
                 clearInterval(timer)
-            }, 1800)
+            }, 2400)
             setTimeout(() => {
                 dispatch(setIsPending(elevator.id,false))
-                dispatch(choiceElevatorAC(queueCommon[0]))
             }, 3000)
         }
     }, [elevator.isPending])
     return (
         <div key={elevator.id} className="elevator__shaft">
-            <div id={`elevatorId__ + ${elevator.id}`} className={`elevator position__${elevator.position}`}
+            <div id={`elevatorId__ + ${elevator.id}`} className="elevator"
                  style={{
                      transition: `transform ${elevator.transition}s linear, background-color 1s linear`,
                      height: `calc(100vh/${countFloors})`,

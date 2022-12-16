@@ -23,19 +23,3 @@
 .elevator .elevator__info img {
     width: 15px;
 }
-
-.position__5 {
-    transform: translateY(0vh);
-}
-.position__4 {
-    transform: translateY(20vh);
-}
-.position__3 {
-    transform: translateY(40vh);
-}
-.position__2 {
-    transform: translateY(60vh);
-}
-.position__1 {
-    transform: translateY(80vh);
-}
